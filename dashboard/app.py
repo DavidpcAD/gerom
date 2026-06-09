@@ -106,6 +106,14 @@ def ensure_dw_ready():
     if insp.has_table("fact_ventas") and insp.has_table("fact_inventario"):
         return
 
+    # En despliegues publicos preferimos inicio rapido: solo ejecutar ETL
+    # automatico cuando se habilita de forma explicita.
+    if os.getenv("BI_BOOTSTRAP_ETL", "0") != "1":
+        raise RuntimeError(
+            "No se encontro un DW SQLite preconstruido. "
+            "Configure BI_BOOTSTRAP_ETL=1 para regenerarlo automaticamente."
+        )
+
     # Generate operational CSVs and execute the ETL end-to-end.
     import generar_fuente_operacional  # noqa: F401
     import cargar_operacional, calidad_datos, etl_pipeline
@@ -113,9 +121,14 @@ def ensure_dw_ready():
     calidad_datos.main()
     etl_pipeline.main()
 
-with st.spinner("Inicializando datos del proyecto..."):
-    ensure_dw_ready()
-f, inv = load()
+try:
+    with st.spinner("Inicializando datos del proyecto..."):
+        ensure_dw_ready()
+    f, inv = load()
+except Exception as e:
+    st.error("No fue posible inicializar el modelo de datos para el dashboard.")
+    st.caption(str(e))
+    st.stop()
 
 # -------- SEGMENTADORES (sidebar) --------
 st.sidebar.title("🌶️ Las Salsas de Lucho")

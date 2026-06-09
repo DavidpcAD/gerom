@@ -17,7 +17,7 @@ Variables de entorno soportadas:
   PG_DB_OP   (default salsas_op)        base operacional
   PG_DB_DW   (default salsas_dw)        base dimensional
 """
-import os, tempfile
+import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
@@ -37,7 +37,7 @@ def _pg_url(db):
 if BACKEND == "sqlite":
     # Las bases SQLite (solo para verificacion/CI) se ubican en un directorio
     # LOCAL escribible; carpetas montadas pueden no soportar el locking de SQLite.
-    _SQLITE_DIR = os.getenv("BI_SQLITE_DIR", os.path.join(tempfile.gettempdir(), "salsas_bi"))
+    _SQLITE_DIR = os.getenv("BI_SQLITE_DIR", os.path.join(PROC_DIR))
     os.makedirs(_SQLITE_DIR, exist_ok=True)
     URL_OPERACIONAL = f"sqlite:///{os.path.join(_SQLITE_DIR, 'salsas_op.db')}"
     URL_DWH         = f"sqlite:///{os.path.join(_SQLITE_DIR, 'salsas_dw.db')}"
