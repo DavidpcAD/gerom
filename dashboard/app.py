@@ -199,7 +199,7 @@ elif pagina.startswith("2"):
         color="es_estrella",title="Rotación mensual de inventario"),width='stretch')
     st.subheader("Detalle (decisión de surtido)")
     st.dataframe(g.assign(clasificacion=g.es_estrella.map({1:"Estrella",0:"Baja rotación"})),
-                 width='stretch')
+                 use_container_width=True)
     st.plotly_chart(px.scatter(g,x="precio_lista",y="margen_pct",size="ingreso",color="es_estrella",
         hover_name="nombre_producto",title="Precio de lista vs margen % por producto"),
         width='stretch')
@@ -273,7 +273,7 @@ elif pagina.startswith("5"):
         ingreso=("monto_neto","sum"),margen_pct=("margen_bruto",lambda x:100*x.sum()/d.loc[x.index,"monto_neto"].sum())).reset_index()
     b2.plotly_chart(px.bar(ap,x="grupo",y="ingreso",title="Con promo vs sin promo (ingreso)",
         color_discrete_sequence=[NAR]),width='stretch')
-    st.dataframe(p.round(1),width='stretch')
+    st.dataframe(p.round(1),use_container_width=True)
     st.plotly_chart(px.bar(p,x="nombre_promocion",y="unidades",title="Unidades por promoción",
         color_discrete_sequence=[VERDE]),width='stretch')
 
