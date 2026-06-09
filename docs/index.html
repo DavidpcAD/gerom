@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las Salsas de Lucho · Proyecto BI</title>
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --panel: rgba(255,255,255,0.82);
+      --panel-strong: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --red: #c0392b;
+      --orange: #e67e22;
+      --blue: #2471a3;
+      --green: #229954;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(192,57,43,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(230,126,34,.12), transparent 26%),
+        linear-gradient(180deg, #fffdfb 0%, var(--bg) 45%, #f3eee6 100%);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 44px; }
+    .hero {
+      background: linear-gradient(135deg, #6a1b16 0%, #c0392b 38%, #e67e22 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 34px 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 240px; height: 240px;
+      background: rgba(255,255,255,0.10);
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+    .kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; opacity: .9; margin-bottom: 14px; }
+    h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.02; }
+    .lead { margin: 14px 0 0; max-width: 760px; font-size: 1.08rem; line-height: 1.7; opacity: .96; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .badge {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      color: #fff; padding: 8px 14px; border-radius: 999px; font-size: .92rem;
+      backdrop-filter: blur(10px);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(15,23,42,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      backdrop-filter: blur(10px);
+    }
+    .card h2, .card h3 { margin-top: 0; }
+    .card p { color: var(--muted); line-height: 1.6; }
+    .span-7 { grid-column: span 7; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-12 { grid-column: span 12; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric {
+      background: var(--panel-strong);
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(15,23,42,.06);
+    }
+    .metric strong { display: block; font-size: 1.4rem; margin-bottom: 6px; color: var(--red); }
+    .metric span { color: var(--muted); font-size: .95rem; }
+    .links { display: grid; gap: 10px; }
+    a.btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      text-decoration: none; color: #fff; background: #1f2937; padding: 13px 16px;
+      border-radius: 14px; font-weight: 700;
+    }
+    a.btn.alt { background: linear-gradient(135deg, var(--red), var(--orange)); }
+    a.link { color: var(--blue); text-decoration: none; font-weight: 700; }
+    .figure {
+      width: 100%; border-radius: 18px; overflow: hidden; border: 1px solid rgba(15,23,42,.08);
+      background: #fff;
+    }
+    .figure img { display: block; width: 100%; height: auto; }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.7; }
+    .footer { text-align: center; color: var(--muted); padding: 22px 0 6px; font-size: .95rem; }
+    @media (max-width: 900px) {
+      .span-7, .span-5, .span-6, .span-12 { grid-column: span 12; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 16px 14px 30px; }
+      .hero, .card { padding: 18px; }
+      .metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Proyecto 02 · Inteligencia de Negocios</div>
+      <h1>Las Salsas de Lucho</h1>
+      <p class="lead">Solución integral de BI para una PYME comercial: modelo dimensional, ETL reproducible, validación de calidad, tablero analítico y documentación lista para compartir.</p>
+      <div class="badges">
+        <span class="badge">PostgreSQL / SQLite</span>
+        <span class="badge">Python + pandas + SQLAlchemy</span>
+        <span class="badge">Streamlit + Plotly</span>
+        <span class="badge">6 vistas analíticas</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card span-7">
+        <h2>Qué incluye</h2>
+        <div class="metrics">
+          <div class="metric"><strong>2</strong><span>Tablas de hechos</span></div>
+          <div class="metric"><strong>6</strong><span>Dimensiones</span></div>
+          <div class="metric"><strong>10</strong><span>Reglas ETL</span></div>
+          <div class="metric"><strong>17</strong><span>KPIs documentados</span></div>
+        </div>
+        <p style="margin-top:16px">El repositorio contiene la fuente operacional, el esquema estrella, el ETL, el tablero y la documentación técnica. La página principal del tablero está diseñada para consulta local y el sitio sirve como portada para compartir el proyecto con tus compañeros.</p>
+      </div>
+      <div class="card span-5">
+        <h3>Enlaces rápidos</h3>
+        <div class="links">
+          <a class="btn alt" href="https://github.com/DavidpcAD/gerom/blob/main/dashboard/app.py">Abrir código del dashboard</a>
+          <a class="btn" href="https://github.com/DavidpcAD/gerom/blob/main/docs/Informe_Proyecto_BI_Las_Salsas_de_Lucho.pdf">Ver informe PDF</a>
+          <a class="btn" href="https://github.com/DavidpcAD/gerom/blob/main/presentacion/Presentacion_Las_Salsas_de_Lucho.pptx">Ver presentación</a>
+        </div>
+        <p style="margin-top:14px">Si GitHub Pages queda habilitado desde la rama o carpeta correcta, esta portada será el link compartible.</p>
+      </div>
+
+      <div class="card span-6">
+        <h3>Modelo del proyecto</h3>
+        <div class="figure"><img src="diagramas/modelo_dimensional.png" alt="Modelo dimensional"></div>
+        <p>Esquema estrella con dos hechos: ventas e inventario, más dimensiones conformadas de tiempo y producto.</p>
+      </div>
+      <div class="card span-6">
+        <h3>Modelo operacional</h3>
+        <div class="figure"><img src="diagramas/modelo_operacional.png" alt="Modelo operacional"></div>
+        <p>Fuente transaccional con clientes, productos, canales, ventas, detalle e inventario.</p>
+      </div>
+
+      <div class="card span-12">
+        <h3>Resumen ejecutivo</h3>
+        <ul>
+          <li>Las 3 salsas estrella concentran la mayor parte del ingreso.</li>
+          <li>Mayoreo impulsa la facturación, pero algunas promociones erosionan el margen.</li>
+          <li>La rotación de inventario muestra sobrestock en las líneas de baja rotación.</li>
+          <li>La solución ya corre localmente en <strong>http://localhost:8501</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">Proyecto BI · Las Salsas de Lucho · listo para compartir como sitio estático.</div>
+  </main>
+</body>
+</html>

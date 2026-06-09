@@ -1,0 +1,74 @@
+id_cliente,nombre_cliente,tipo_cliente,provincia,fecha_registro,segmento_origen
+1,Cliente Contado,Minorista,San Jose,,Walk-in
+2,Pulperia La Esquina,Mayorista,Puntarenas,,Comercio
+3,Mini Super El Cruce,Mayorista,Heredia,2025-02-17,Comercio
+4,Soda Doña Tere,Mayorista, San Jose ,,Comercio
+5,Restaurante El Fogon,Mayorista,Alajuela,,Comercio
+6,Super Las Brisas,Mayorista,cartago,2021-02-24,Comercio
+7,Abastecedor San Blas,Mayorista,Guanacaste,2024-12-07,Comercio
+8,Soda La U,Mayorista,guanacaste,2024-04-21,Comercio
+9,Marisqueria Mar Azul,Mayorista,Heredia,2021-11-23,Comercio
+10,Pulperia Don Beto,Mayorista,puntarenas,2021-11-15,Comercio
+11,Mini Super Familiar,Mayorista,CARTAGO,,Comercio
+12,Restaurante Sabor Tico,Mayorista,Alajuela,2022-12-06,Comercio
+13,Cafeteria Central,Mayorista,guanacaste,2025-02-03,Comercio
+14,Esteban Mena,Minorista,S.J.,,Consumidor
+15,Karla Solano,Minorista,limon,2023-05-23,Consumidor
+16,Jose Vargas,Minorista,limon,2024-04-21,Consumidor
+17,Marta Chaves,Minorista,heredia,2025-01-17,Consumidor
+18,Sofia Soto,Minorista,Heredia,2023-05-27,Consumidor
+19,Sofia Mena,Minorista,Puntarenas,2025-02-16,Consumidor
+20,Pedro Mena,Minorista,CARTAGO,2023-04-25,Consumidor
+21,Laura Mora,Minorista,limon,2023-05-16,Consumidor
+22,Diego Solano,Minorista,puntarenas,2025-10-19,Consumidor
+23,Mauricio Quiros,Minorista,CARTAGO,2024-06-22,Consumidor
+24,Daniela Solano,Minorista,alajuela,2023-10-11,Consumidor
+25,Rodrigo Quiros,Minorista,San Jose,2023-11-10,Consumidor
+26,Sofia Chaves,Minorista,Guanacaste,2025-08-16,Consumidor
+27,Rodrigo Castro,Minorista,Guanacaste,2023-08-23,Consumidor
+28,Paula Castro,Minorista,LIMON,2024-08-24,Consumidor
+29,Daniela Rojas,Minorista,Alajuela,2024-06-23,Consumidor
+30,Rodrigo Rojas,Minorista,Guanacaste,2024-09-03,Consumidor
+31,Rodrigo Solano,Minorista,cartago,2023-11-27,Consumidor
+32,Paula Mena,Minorista, San Jose ,2023-02-09,Consumidor
+33,Marta Soto,Minorista,limon,2024-05-08,Consumidor
+34,Luis Jimenez,Minorista,puntarenas,2023-09-15,Consumidor
+35,Carlos Quiros,Minorista,Guanacaste,2025-05-16,Consumidor
+36,Diego Mena,Minorista,LIMON,2024-09-30,Consumidor
+37,Mauricio Soto,Minorista,ALAJUELA,2024-05-22,Consumidor
+38,Laura Jimenez,Minorista,Heredia,2024-04-16,Consumidor
+39,Laura Mora,Minorista,San Jose,2023-03-06,Consumidor
+40,Andres Jimenez,Minorista,Guanacaste,2025-09-21,Consumidor
+41,Diego Mena,Minorista, Cartago,2025-08-26,Consumidor
+42,Daniela Vargas,Minorista,San Jose,2024-12-26,Consumidor
+43,Daniela Chaves,Minorista,ALAJUELA,,Consumidor
+44,Marta Mora,Minorista,ALAJUELA,2023-08-12,Consumidor
+45,Laura Vargas,Minorista, Cartago,2024-01-11,Consumidor
+46,Pedro Quiros,Minorista,Cartago,2023-07-20,Consumidor
+47,Jose Mena,Minorista,Limon,2024-04-29,Consumidor
+48,Sofia Chaves,Minorista,alajuela,2025-04-01,Consumidor
+49,Jose Rojas,Minorista,Alajuela,2024-06-27,Consumidor
+50,Esteban Castro,Minorista,ALAJUELA,2025-09-23,Consumidor
+51,Carlos Vargas,Minorista,Heredia,2023-05-05,Consumidor
+52,Andres Mora,Minorista, San Jose ,2023-11-19,Consumidor
+53,Jose Mena,Minorista,san jose,,Consumidor
+54,Luis Vargas,Minorista,Alajuela,2024-05-19,Consumidor
+55,Jose Solano,Minorista,S.J.,2024-10-09,Consumidor
+56,Pedro Vargas,Minorista,puntarenas,2025-03-21,Consumidor
+57,Carlos Castro,Minorista,alajuela,2023-05-29,Consumidor
+58,Ana Quiros,Minorista,Guanacaste,,Consumidor
+59,Diego Mena,Minorista,Heredia,2023-05-21,Consumidor
+60,Laura Soto,Minorista,Heredia,2024-09-11,Consumidor
+61,Rodrigo Mora,Minorista,puntarenas,2023-08-01,Consumidor
+62,Carlos Castro,Minorista,San Jose,2023-11-15,Consumidor
+63,Pedro Castro,Minorista,Guanacaste,2024-02-21,Consumidor
+64,Pedro Mena,Minorista,alajuela,2023-04-15,Consumidor
+65,Luis Chaves,Minorista,limon,,Consumidor
+66,Andres Rojas,Minorista,puntarenas,2025-06-23,Consumidor
+67,Paula Chaves,Minorista,Guanacaste,2023-11-02,Consumidor
+68,Paula Mora,Minorista,limon,2023-10-31,Consumidor
+69,Daniela Rojas,Minorista,SAN JOSE,2023-03-23,Consumidor
+70,Gabriela Vargas,Minorista,Puntarenas,2024-12-25,Consumidor
+71,Paula Chaves,Minorista,Guanacaste,2024-04-29,Consumidor
+72,Sofia Rojas,Minorista,Alajuela,2024-11-11,Consumidor
+73,Daniela Vargas,Minorista,Heredia,2023-08-10,Consumidor
