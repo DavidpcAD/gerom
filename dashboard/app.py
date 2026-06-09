@@ -8,12 +8,14 @@ Ejecutar:  streamlit run dashboard/app.py
 (usa la conexion definida en etl/config.py; export BI_BACKEND=sqlite para demo)
 """
 import os, sys
+os.environ.setdefault("BI_BACKEND", "sqlite")
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "etl"))
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
+from sqlalchemy import inspect
 from utils import get_engine
 
 st.set_page_config(page_title="BI · Las Salsas de Lucho", layout="wide",
@@ -97,6 +99,22 @@ def load():
     inv = fi.merge(dt,on="sk_tiempo").merge(dp,on="sk_producto")
     return f, inv
 
+def ensure_dw_ready():
+    """Build demo data in DW when running in fresh environments (e.g., Streamlit Cloud)."""
+    dw = get_engine("dw")
+    insp = inspect(dw)
+    if insp.has_table("fact_ventas") and insp.has_table("fact_inventario"):
+        return
+
+    # Generate operational CSVs and execute the ETL end-to-end.
+    import generar_fuente_operacional  # noqa: F401
+    import cargar_operacional, calidad_datos, etl_pipeline
+    cargar_operacional.main()
+    calidad_datos.main()
+    etl_pipeline.main()
+
+with st.spinner("Inicializando datos del proyecto..."):
+    ensure_dw_ready()
 f, inv = load()
 
 # -------- SEGMENTADORES (sidebar) --------
